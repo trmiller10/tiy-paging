@@ -69,7 +69,7 @@ public class PeopleWeb {
 
 
                     // check if the current offset is less than the size of the people array, minus twenty
-                    if(offset < 1000 - 20) {
+                    if(offset < peopleArrayList.size() - 20) {
                         // if so we can go to the next page.
                         // set nextOffset to the offset plus twenty
                         nextOffset = offset + 20;
@@ -84,7 +84,7 @@ public class PeopleWeb {
                     // Note that subList returns a List, not an ArrayList. You'll need to create a variable
                     // that can hold a List of People.
 
-                    List peopleList = peopleArrayList.subList(offset, nextOffset);
+                    List peopleList = peopleArrayList.subList(offset, offset + 20);
 
                     // put the variable containing the list of people into the model with a key named "people"
                     peopleMap.put("people", peopleList);
